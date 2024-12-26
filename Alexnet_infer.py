@@ -2,8 +2,8 @@ import torch
 from torchvision import transforms
 from models import AlexNet
 def try_gpu(i=0):
-    # if torch.cuda.is_available():
-    #     return torch.device("cuda:{}".format(i))
+    if torch.cuda.is_available():
+        return torch.device("cuda:{}".format(i))
     return torch.device(f"cpu")
 torch.serialization.add_safe_globals({'Residual': AlexNet})
 device=try_gpu()
