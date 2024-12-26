@@ -110,7 +110,7 @@ with tab2:
             labels = infer(image, model_file)
         elif model_type == 'AlexNet模型':
             torch.serialization.add_safe_globals({'Residual': AlexNet})
-            model_file = 'model/trainalexnet.pth'
+            model_file = 'model/trainAlexNet.pth'
             labels = Alexnet_infer(image, model_file)
         if labels:
             for label, prob in labels:
