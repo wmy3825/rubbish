@@ -16,7 +16,7 @@ def Alexnet_infer(image,model_file):
     image = transform(image)
     image = torch.unsqueeze(image, 0)  # 图像数据展平
     image = image.to(device)
-    model = torch.load(model_file, map_location=torch.device('cpu'))
+    model = torch.load(model_file)
     model = model.to(device)
     model.eval()
     output = model(image)
